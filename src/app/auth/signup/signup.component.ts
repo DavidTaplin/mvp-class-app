@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,7 @@ export class SignupComponent implements OnInit {
     password_confirmation: new FormControl('')
   })
 
-  constructor( private http:HttpClient) { }
+  constructor( private authService:AuthService) { }
 
   ngOnInit(): void {
   }
@@ -24,8 +25,9 @@ export class SignupComponent implements OnInit {
     const movieSignUp = this.signupForm.value;
     console.log(movieSignUp)
 
+   // this.authService.signup.(movieSignUp).subscribe((res:any) => {})
 
-   // this.http.post("need api url for sign up create", movieSignUp).subscribe((res:any) => { console.log(res) })
+
   }
 
 }
