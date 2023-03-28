@@ -3,10 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TheTeamComponent } from './the-team/the-team.component';
+import { AbovethefoldComponent } from './abovethefold/abovethefold.component';
+
 const routes: Routes =[
-  { path: '', component: HomeComponent },
-  { path: 'AboutUs', component: AboutUsComponent},
-  { path: 'TheTeam', component: TheTeamComponent},
+  {path: '', component: AbovethefoldComponent},
+  { path: 'home', component: HomeComponent },
+  { path: 'about-us', component: AboutUsComponent},
+  { path: 'the-team', component: TheTeamComponent},
 ];
 
 @NgModule({

@@ -1,13 +1,4 @@
-.navbar-toggle {
-    display: none;
-    cursor: pointer;
-    position: fixed;
-    z-index: 50;
-    top: 15px;
-    left : 15px;
-    background: none;
-    border: 0;
-  }
+
   
   .bar1, .bar2, .bar3 {
     width: 30px;
