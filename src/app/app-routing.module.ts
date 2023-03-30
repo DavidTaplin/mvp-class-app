@@ -13,7 +13,9 @@ const routes: Routes =[
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent},
   { path: 'the-team', component: TheTeamComponent},
-];
+
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
