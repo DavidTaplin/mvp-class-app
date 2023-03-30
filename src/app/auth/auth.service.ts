@@ -12,7 +12,7 @@ export class AuthService {
     return this.http.post("http://localhost3000/api/v1/users/create", movieSignUp)
   }
 
-  login(user: any){
+   login(user: any){
     return this.http.post('http://localhost:3000/api/v1/users/login', user)
   }
 }

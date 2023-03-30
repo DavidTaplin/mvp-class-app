@@ -16,6 +16,7 @@ export class SignupComponent implements OnInit {
     password: new FormControl(''),
     password_confirmation: new FormControl('')
   })
+  authService: any;
 
   constructor() { }
 
@@ -28,4 +29,5 @@ export class SignupComponent implements OnInit {
 
     this.authService.signup(movieSignUp).subscribe((res:any) => {})
 
+  }
 }
