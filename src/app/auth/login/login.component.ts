@@ -5,25 +5,22 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-loginForm = new FormGroup({
-  email: new FormControl(''),
-  password: new FormControl('')
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
+  constructor(private authservice: AuthService) {}
 
-})
-  constructor(private authservice:AuthService) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onSubmit() {
     const loginuser = this.loginForm.value;
-    console.log(loginuser)
-    this.authservice.login(loginuser).subscribe((res:any)=>{
-      console.log(res)
-    })
+    console.log('THE USER: ', loginuser);
+    this.authservice.login(loginuser).subscribe((res: any) => {
+      console.log('RES: ', res);
+    });
   }
-
 }
