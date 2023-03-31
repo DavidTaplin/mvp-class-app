@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { RapidAPIService } from '../shared/api/rapidAPI.service';
 
 @Component({
   selector: 'app-abovethefold',
@@ -14,9 +15,15 @@ export class AbovethefoldComponent implements OnInit {
   });
   authservice: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(
+    private authService: AuthService,
+    private RapidAPIService: RapidAPIService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.RapidAPIService.searchMoviesAPI('bad boys');
+  }
+
   onSubmit() {
     const loginuser = this.loginForm.value;
 
