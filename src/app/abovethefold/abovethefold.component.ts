@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
+import { UserService } from '../auth/user.service';
 
 @Component({
   selector: 'app-abovethefold',
@@ -14,7 +15,7 @@ export class AbovethefoldComponent implements OnInit {
   });
   authservice: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private userService:UserService) {}
 
   ngOnInit(): void {}
   onSubmit() {
@@ -23,10 +24,13 @@ export class AbovethefoldComponent implements OnInit {
     console.log('LOGIN CLICKED', loginuser);
 
     this.authService.login(loginuser).subscribe((res: any) => {
-      console.log(res.payload.user);
-      if (res.success) {
-        console.log('SUCCESS: ', res);
+      if (res.success){
+        this.userService.setCurrentUser(res.payload.user)
+
+
       }
+      this.userService.setCurrentUser(res.payload.user)
+
     });
   }
 }
