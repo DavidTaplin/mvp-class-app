@@ -8,7 +8,7 @@ import { User } from '../models/user.model';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  currentUser = User = null;
+  currentUser:User = null;
 
   constructor(private userService:UserService) { }
 
