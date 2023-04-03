@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule} from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SignupComponent } from './auth/signup/signup.component';
@@ -14,6 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,11 +30,16 @@ import { FooterComponent } from './footer/footer.component';
     MovieCardComponent,
     MoviesComponent,
     MovieDetailsComponent,
-    FooterComponent
+    FooterComponent,
+
+    TheTeamComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    ReactiveFormsModule,
     HttpClientModule,
   ],
   providers: [],

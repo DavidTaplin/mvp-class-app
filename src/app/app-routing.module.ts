@@ -4,13 +4,18 @@ import { HomeComponent } from './home/home.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { TheTeamComponent } from './the-team/the-team.component';
 import { AbovethefoldComponent } from './abovethefold/abovethefold.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 const routes: Routes =[
-  {path: '', component: AbovethefoldComponent},
+  {path: 'login', component: AbovethefoldComponent},
+  {path: 'signup', component: SignupComponent},
+
   { path: 'home', component: HomeComponent },
   { path: 'about-us', component: AboutUsComponent},
   { path: 'the-team', component: TheTeamComponent},
-];
+
+
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
