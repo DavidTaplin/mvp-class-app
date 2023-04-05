@@ -12,7 +12,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { TheTeamComponent } from './the-team/the-team.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
@@ -26,9 +25,7 @@ import { FooterComponent } from './footer/footer.component';
     TheTeamComponent,
     MovieCardComponent,
     MoviesComponent,
-    MovieDetailsComponent,
     FooterComponent,
-
     TheTeamComponent,
   ],
   imports: [
