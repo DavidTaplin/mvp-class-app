@@ -14,6 +14,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { FooterComponent } from './footer/footer.component';
     MoviesComponent,
     MovieDetailsComponent,
     FooterComponent,
-
+    LoginComponent,
     TheTeamComponent,
   ],
   imports: [

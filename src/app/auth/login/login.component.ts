@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth.service';
+import { UserService } from '../user.service';
+
 
 @Component({
   selector: 'app-login',
@@ -12,15 +14,16 @@ export class LoginComponent implements OnInit {
     email: new FormControl(''),
     password: new FormControl(''),
   });
-  constructor(private authservice: AuthService) {}
+  constructor(private authservice: AuthService, private userService:UserService) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
     const loginuser = this.loginForm.value;
-    console.log('THE USER: ', loginuser);
     this.authservice.login(loginuser).subscribe((res: any) => {
-      console.log('RES: ', res);
+      if(res.success){
+        this.userService.setCurrentUser(res.payload.user);
+      }
     });
   }
 }
