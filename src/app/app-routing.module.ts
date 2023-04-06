@@ -21,9 +21,6 @@ const routes: Routes =[
   { path: 'about-us', component: AboutUsComponent},
   { path: 'the-team', component: TheTeamComponent},
 
-  { path: 'comments', component: CommentsComponent},
-
-
 
   { path: 'user-playlists', component: UserPlaylistsComponent },
   { path: 'playlist-detail/:id', component: PlaylistDetailComponent},
