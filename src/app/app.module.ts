@@ -14,6 +14,9 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
+import { RatingsComponent } from './ratings/ratings.component';
+import { CommentsComponent } from './comments/comments.component';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +33,9 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
 
     TheTeamComponent,
+    RatingsComponent,
+    CommentsComponent,
+
   ],
   imports: [
     BrowserModule,
