@@ -6,7 +6,6 @@ import { UserService } from '../auth/user.service';
 
 import { RapidAPIService } from '../shared/api/rapidAPI.service';
 
-
 @Component({
   selector: 'app-abovethefold',
   templateUrl: './abovethefold.component.html',
@@ -19,17 +18,12 @@ export class AbovethefoldComponent implements OnInit {
   });
   authservice: any;
 
-
   constructor(
     private authService: AuthService,
-    private RapidAPIService: RapidAPIService,
-    private userService:UserService
+    private userService: UserService
   ) {}
 
-  ngOnInit(): void {
-    this.RapidAPIService.searchMoviesAPI('bad boys');
-  }
- fd528e7b049ae5ad5d70aeca190688658a841164
+  ngOnInit(): void {}
 
   onSubmit() {
     const loginuser = this.loginForm.value;
@@ -37,13 +31,10 @@ export class AbovethefoldComponent implements OnInit {
     console.log('LOGIN CLICKED', loginuser);
 
     this.authService.login(loginuser).subscribe((res: any) => {
-      if (res.success){
-        this.userService.setCurrentUser(res.payload.user)
-
-
+      if (res.success) {
+        this.userService.setCurrentUser(res.payload.user);
       }
-      this.userService.setCurrentUser(res.payload.user)
-
+      this.userService.setCurrentUser(res.payload.user);
     });
   }
 }
