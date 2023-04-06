@@ -14,6 +14,8 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
+import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
+import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     FooterComponent,
 
     TheTeamComponent,
+     HighestRatedMovieComponent,
+     FeaturedPlaylistComponent,
   ],
   imports: [
     BrowserModule,
