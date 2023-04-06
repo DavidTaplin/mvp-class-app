@@ -12,8 +12,12 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { TheTeamComponent } from './the-team/the-team.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserPlaylistsComponent } from './user-playlists/user-playlists.component';
+import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
+import { CommentFormComponent } from './comment-form/comment-form.component';
+import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
+import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +30,13 @@ import { FooterComponent } from './footer/footer.component';
     TheTeamComponent,
     MovieCardComponent,
     MoviesComponent,
-    MovieDetailsComponent,
     FooterComponent,
-
     TheTeamComponent,
+    UserPlaylistsComponent,
+    PlaylistDetailComponent,
+    CommentFormComponent,
+     HighestRatedMovieComponent,
+     FeaturedPlaylistComponent,
   ],
   imports: [
     BrowserModule,
