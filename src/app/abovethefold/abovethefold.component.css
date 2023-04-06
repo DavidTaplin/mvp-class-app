@@ -38,12 +38,12 @@
   transition: box-shadow 0.1s, top 0.1s;
   box-shadow: 0 3px 0 rgba(0,0,0,0.3);
   cursor: pointer;
-  background: transparent; 
+  background: transparent;
   border: 1.8px solid rgba(182,229,251,1);
   outline: none;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=email]:focus, input[type=password]:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -74,7 +74,7 @@ button:hover {
 
 /* Float signup buttons and add a width */
  .signinbtn {
-  font-weight: bold;  
+  font-weight: bold;
   border-radius: 2em;
   float:right;
   width: 50%;
@@ -82,7 +82,7 @@ button:hover {
   transition: box-shadow 0.1s, top 0.1s;
   box-shadow: 0 3px 0 rgba(0,0,0,0.3);
   cursor: pointer;
-  background: transparent; 
+  background: transparent;
   border: 1.8px solid rgba(182,229,251,1);
   outline: none;
 }
