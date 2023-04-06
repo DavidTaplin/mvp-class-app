@@ -47,6 +47,7 @@ import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-pla
     UserPlaylistsComponent,
     PlaylistDetailComponent,
     CommentFormComponent,
+    LoginComponent
 
   ],
   imports: [
