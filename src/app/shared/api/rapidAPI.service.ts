@@ -6,11 +6,14 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class RapidAPIService {
+  imdbMovie: any = [];
+
   constructor(private http: HttpClient) {}
 
   searchMoviesAPI(query: string) {
     const pageNumber: number = 2;
     const myPageNumber = `/?page=${pageNumber}`;
+
     this.http
       .get(
         environment.RapidAPI.ApiUrl +
@@ -19,7 +22,14 @@ export class RapidAPIService {
           environment.RapidAPI.rapidAPI_Key
       )
       .subscribe((response: any) => {
-        console.log(response);
+        for (let key in response) {
+          let movie = response[key];
+          for (let key2 in movie) {
+            this.imdbMovie.push(movie[key2]);
+          }
+        }
+
+        console.log('IMDB_MOVIE: ', this.imdbMovie);
       });
   }
 }
