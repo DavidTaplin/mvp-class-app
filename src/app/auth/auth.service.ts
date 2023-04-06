@@ -30,7 +30,7 @@ export class AuthService {
     }
 
     // send request to get user info
-    this.http.get("http://localhost:3000/api/vq/users/me",
+    this.http.get("http://localhost:3000/api/v1/users/me",
 
     {
       headers: {
