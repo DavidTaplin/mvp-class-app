@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family =Oxanium:wght@200&display=swap");
+
 .html,body{
     margin:0 auto;
     padding:0;
@@ -29,9 +32,6 @@ input[type=text] {
     outline: none;
 }
 *:before, *:after, *, ::after, ::before {box-sizing: border-box;}
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family =Oxanium:wght@200&display=swap");
-
 
 .grid-container {
 	--w: 1fr;
