@@ -1,8 +1,12 @@
 
     <section class="buttons">
       <a class="navBtn" routerLink="/home">Home</a>
+      <a class="navBtn" *ngIf="!currentUser" routerLink="/login">Log In</a>
+      <a class="navBtn" *ngIf="!currentUser" routerLink="/signup">Sign Up</a>
       <a class="navBtn" routerLink="/about-us">About Us</a>
       <a class="navBtn" routerLink="/the-team">The Team</a>
+      <a class="navBtn" routerLink="/user" *ngIf="currentUser">My Page</a>
+      <a class="navBtn" (click)="onLogout()" *ngIf="currentUser">Log Out</a>
     </section>
     <!-- <nav id="nav">
         <section class="nav-list">

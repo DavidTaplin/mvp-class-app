@@ -14,12 +14,19 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
 import { FooterComponent } from './footer/footer.component';
 
+
 import { RatingsComponent } from './ratings/ratings.component';
 import { CommentsComponent } from './comments/comments.component';
+
+
+import { LoginComponent } from './auth/login/login.component';
 
 import { UserPlaylistsComponent } from './user-playlists/user-playlists.component';
 import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
+import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
+import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
+
 
 
 @NgModule({
