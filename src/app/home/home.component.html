@@ -1,4 +1,14 @@
 <body>
+  <div class="jumbotron"></div>
+  <div class="grid-container">
+    <div class="grid-item"></div>
+    <div class="grid-item">Movies</div>
+    <div class="grid-item">Followed Playlists</div>
+    <div class="grid-item">
+      <a routerLink="/user-playlists" class="text-reset">My Playlists</a>
+    </div>
+    <div class="grid-item"></div>
+  </div>
   <form
     style="margin: 0 auto; max-width: 30%"
     [formGroup]="searchForm"
@@ -18,16 +28,5 @@
 
   <div class="container" *ngFor="let movie of imdbMovie">
     <h2>{{ movie.title }}</h2>
-  </div>
-
-  <div class="jumbotron"></div>
-  <div class="grid-container">
-    <div class="grid-item"></div>
-    <div class="grid-item">Movies</div>
-    <div class="grid-item">Followed Playlists</div>
-    <div class="grid-item">
-      <a routerLink="/user-playlists" class="text-reset">My Playlists</a>
-    </div>
-    <div class="grid-item"></div>
   </div>
 </body>
