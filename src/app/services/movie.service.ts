@@ -7,9 +7,9 @@ import { Observable } from 'rxjs';
 export class MovieService {
   private API_URL: string = '';
   private API_KEY: string = ''
-      constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-      getMovies(): Observable<any> {
-      return this.http.get(`${this.API_URL}&s=terminator${this.API_KEY}`) 
-     }
+    getMovies(): Observable<any> {
+    return this.http.get(`${this.API_URL}&s=terminator${this.API_KEY}`) 
     }
+  }

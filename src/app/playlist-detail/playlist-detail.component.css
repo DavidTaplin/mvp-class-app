@@ -1,0 +1,15 @@
+.table th {
+    font-weight: bold;
+    border-top: none;
+}
+.table td {
+    border-top: none;
+}
+
+/* Add margin to the playlist description */
+.lead {
+    margin-bottom: 2rem;
+}
+.container {
+    width: 100%;
+}
