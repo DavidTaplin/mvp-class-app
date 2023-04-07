@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family =Oxanium:wght@200&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family =Oxanium:wght@200&display=swap"); */
 
 .html,body{
     margin:0 auto;
@@ -11,6 +11,9 @@
     justify-content:center;
      background: rgb(0,0,0);
      background: linear-gradient(162deg, rgba(0,0,0,1) 12%, rgba(26,23,57,1) 83%, rgba(44,58,112,1) 95%, rgba(182,229,251,1) 100%);
+}
+h2{
+  color:white;
 }
 input[type=text] {
     /* position: relative; */
