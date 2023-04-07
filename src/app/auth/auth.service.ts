@@ -7,7 +7,11 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private route:Router, private userService:UserService) {}
+  constructor(
+    private http: HttpClient,
+    private route: Router,
+    private userService: UserService
+  ) {}
 
   signup(movieSignUp: any) {
     console.log('SERVICE HIT', movieSignUp);
@@ -22,61 +26,58 @@ export class AuthService {
     return this.http.post('http://localhost:3000/api/v1/users/login', user);
   }
 
-  autoSignIn(){
+  autoSignIn() {
     // get token from browser
     const token = this.getToken();
-    if(!token){
+    if (!token) {
       return;
     }
-
-    // send request to get user info
-    this.http.get("http://localhost:3000/api/v1/users/me",
-
-    {
-      headers: {
-        Authorization: `Bearer ${token.value}`
-      }
-    }).subscribe((res:any)=>{
-      if (res.scuess){
-        this.userService.setCurrentUser(
-          res.payload.user
-        )
-        console.log(res);
-        //navigate to home
-        this.route.navigate(['/home'])
-      }
-    })
-
-
+    this.http
+      .get('http://localhost:3000/api/v1/users/me', {
+        headers: {
+          Authorization: 'Bearer ' + token.value,
+        },
+      })
+      .subscribe((res: any) => {
+        console.log('TOKEN VALUE:', token.value);
+        if (res.success) {
+          console.log('SUCCESS!!');
+          this.userService.setCurrentUser(res.payload);
+          console.log('RESPONSE AFTER USER SET:', res);
+          this.route.navigate(['/home']);
+          console.log('CURRENT USER:', this.userService.currentUser);
+        }
+      });
   }
 
-  logout(){
+  logout() {
     const token = this.getToken();
 
-    this.http.delete("http://localhost:3000/api/v1/users/logout",
-    {
-      headers: {
-        Authortization: `Bearer ${token.value}`
-      }
-    }).subscribe((res:any)=>{
-      if(res.success){
-        this.removeToken();
-        this.userService.setCurrentUser(null);
-        this.route.navigate(['/login']);
-      }
-    })
+    this.http
+      .delete('http://localhost:3000/api/v1/users/logout', {
+        headers: {
+          Authortization: `Bearer ${token.value}`,
+        },
+      })
+      .subscribe((res: any) => {
+        if (res.success) {
+          this.removeToken();
+          this.userService.setCurrentUser(null);
+          this.route.navigate(['/login']);
+        }
+      });
   }
 
-  getToken(){
-    return JSON.parse(localStorage.getItem('token'))
+  getToken() {
+    console.log('GET TOKEN', JSON.parse(localStorage.getItem('token')));
+    return JSON.parse(localStorage.getItem('token'));
   }
 
-  setToken(token){
-    localStorage.setItem('token', JSON.stringify(token))
+  setToken(token) {
+    localStorage.setItem('token', JSON.stringify(token));
   }
 
- removeToken(){
-  localStorage.removeItem('token')
- }
-
+  removeToken() {
+    localStorage.removeItem('token');
+  }
 }
