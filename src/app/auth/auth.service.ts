@@ -14,8 +14,6 @@ export class AuthService {
   ) {}
 
   signup(movieSignUp: any) {
-    console.log('SERVICE HIT', movieSignUp);
-
     return this.http.post(
       'http://localhost:3000/api/v1/users/create',
       movieSignUp
@@ -24,7 +22,6 @@ export class AuthService {
 
   login(user: any) {
     return this.http.post('http://localhost:3000/api/v1/users/login', user);
-    console.log('THE USER: ', user);
   }
 
   autoSignIn() {
@@ -40,13 +37,9 @@ export class AuthService {
         },
       })
       .subscribe((res: any) => {
-        console.log('TOKEN VALUE:', token.value);
         if (res.success) {
-          console.log('SUCCESS!!');
           this.userService.setCurrentUser(res.payload.user);
-          console.log('RESPONSE AFTER USER SET:', res);
           //this.route.navigate(['/home']);
-          console.log('CURRENT USER:', this.userService.currentUser);
         }
       });
   }
@@ -70,7 +63,6 @@ export class AuthService {
   }
 
   getToken() {
-    console.log('GET TOKEN', JSON.parse(localStorage.getItem('token')));
     return JSON.parse(localStorage.getItem('token'));
   }
 

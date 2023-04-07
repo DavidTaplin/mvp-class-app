@@ -28,8 +28,6 @@ export class RapidAPIService {
             this.imdbMovie.push(movie[key2]);
           }
         }
-
-        console.log('IMDB_MOVIE: ', this.imdbMovie);
       });
   }
 }

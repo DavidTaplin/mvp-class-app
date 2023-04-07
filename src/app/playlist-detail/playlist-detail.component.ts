@@ -5,24 +5,24 @@ import { PlaylistService } from '../services/playlist.service';
 @Component({
   selector: 'app-playlist-detail',
   templateUrl: './playlist-detail.component.html',
-  styleUrls: ['./playlist-detail.component.css']
+  styleUrls: ['./playlist-detail.component.css'],
 })
 export class PlaylistDetailComponent implements OnInit {
   playlist: any = null;
 
-  constructor(private activatedRoute:ActivatedRoute, private playlistService:PlaylistService) { }
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private playlistService: PlaylistService
+  ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params)=>{
-      console.log(params);
+    this.activatedRoute.params.subscribe((params) => {
       const playlistId = params['id'];
       this.playlistService.fetchPlaylist(playlistId).subscribe({
-        next: (res:any)=>{
-          console.log(res);
+        next: (res: any) => {
           this.playlist = res.payload.playlist;
-        }
-      })
-    })
+        },
+      });
+    });
   }
-
 }
