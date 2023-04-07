@@ -42,7 +42,7 @@ export class AuthService {
         console.log('TOKEN VALUE:', token.value);
         if (res.success) {
           console.log('SUCCESS!!');
-          this.userService.setCurrentUser(res.payload);
+          this.userService.setCurrentUser(res.payload.user);
           console.log('RESPONSE AFTER USER SET:', res);
           this.route.navigate(['/home']);
           console.log('CURRENT USER:', this.userService.currentUser);
