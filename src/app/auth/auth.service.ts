@@ -24,6 +24,7 @@ export class AuthService {
 
   login(user: any) {
     return this.http.post('http://localhost:3000/api/v1/users/login', user);
+    console.log('THE USER: ', user);
   }
 
   autoSignIn() {
@@ -44,7 +45,7 @@ export class AuthService {
           console.log('SUCCESS!!');
           this.userService.setCurrentUser(res.payload.user);
           console.log('RESPONSE AFTER USER SET:', res);
-          this.route.navigate(['/home']);
+          //this.route.navigate(['/home']);
           console.log('CURRENT USER:', this.userService.currentUser);
         }
       });
@@ -56,7 +57,7 @@ export class AuthService {
     this.http
       .delete('http://localhost:3000/api/v1/users/logout', {
         headers: {
-          Authortization: `Bearer ${token.value}`,
+          Authorization: `Bearer ${token.value}`,
         },
       })
       .subscribe((res: any) => {
