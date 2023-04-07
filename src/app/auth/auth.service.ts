@@ -32,24 +32,20 @@ export class AuthService {
     if (!token) {
       return;
     }
-
-    // send request to get user info
     this.http
-      .get(
-        'http://localhost:3000/api/v1/users/me',
-
-        {
-          headers: {
-            Authorization: `Bearer ${token.value}`,
-          },
-        }
-      )
+      .get('http://localhost:3000/api/v1/users/me', {
+        headers: {
+          Authorization: 'Bearer ' + token.value,
+        },
+      })
       .subscribe((res: any) => {
+        console.log('TOKEN VALUE:', token.value);
         if (res.success) {
-          this.userService.setCurrentUser(res.payload.user);
-          console.log(res);
-          //navigate to home
+          console.log('SUCCESS!!');
+          this.userService.setCurrentUser(res.payload);
+          console.log('RESPONSE AFTER USER SET:', res);
           this.route.navigate(['/home']);
+          console.log('CURRENT USER:', this.userService.currentUser);
         }
       });
   }
@@ -73,6 +69,7 @@ export class AuthService {
   }
 
   getToken() {
+    console.log('GET TOKEN', JSON.parse(localStorage.getItem('token')));
     return JSON.parse(localStorage.getItem('token'));
   }
 
