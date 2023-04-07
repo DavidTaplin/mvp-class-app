@@ -4,20 +4,18 @@ import { PlaylistService } from '../services/playlist.service';
 @Component({
   selector: 'app-user-playlists',
   templateUrl: './user-playlists.component.html',
-  styleUrls: ['./user-playlists.component.css']
+  styleUrls: ['./user-playlists.component.css'],
 })
 export class UserPlaylistsComponent implements OnInit {
   userPlaylists: any = [];
 
-  constructor(private playlistService:PlaylistService) { }
+  constructor(private playlistService: PlaylistService) {}
 
   ngOnInit(): void {
-    this.playlistService.fetchUsersPlaylist().subscribe((res:any)=>{
-      console.log(res);
-      if(res.success){
+    this.playlistService.fetchUsersPlaylist().subscribe((res: any) => {
+      if (res.success) {
         this.userPlaylists = res.payload.playlists;
       }
-    })
+    });
   }
-
 }

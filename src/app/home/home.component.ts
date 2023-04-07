@@ -45,8 +45,6 @@ export class HomeComponent implements OnInit {
             this.imdbMovie.push(movie[key2]);
           }
         }
-
-        console.log('IMDB_MOVIE: ', this.imdbMovie);
       });
   }
 
@@ -54,7 +52,6 @@ export class HomeComponent implements OnInit {
     this.imdbMovie = [];
     this.movieToQuery = this.searchForm.value.movieTitle;
     this.searchMoviesAPI(this.movieToQuery);
-    console.log('FORM:', this.searchForm.value);
     this.searchForm.reset();
   }
 }

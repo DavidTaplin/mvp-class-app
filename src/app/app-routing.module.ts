@@ -13,24 +13,21 @@ import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.compo
 import { CommentFormComponent } from './comment-form/comment-form.component';
 
 
-const routes: Routes =[
-  {path: 'login', component: AbovethefoldComponent},
-  {path: 'signup', component: SignupComponent},
-
+const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'login', component: AbovethefoldComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'about-us', component: AboutUsComponent},
-  { path: 'the-team', component: TheTeamComponent},
-
-
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'the-team', component: TheTeamComponent },
   { path: 'user-playlists', component: UserPlaylistsComponent },
-  { path: 'playlist-detail/:id', component: PlaylistDetailComponent},
-  { path: 'comment-form', component: CommentFormComponent}
+  { path: 'playlist-detail/:id', component: PlaylistDetailComponent },
+  { path: 'comment-form', component: CommentFormComponent },
+];
 
-
-]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

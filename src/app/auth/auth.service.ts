@@ -7,11 +7,13 @@ import { UserService } from './user.service';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private http: HttpClient, private route:Router, private userService:UserService) {}
+  constructor(
+    private http: HttpClient,
+    private route: Router,
+    private userService: UserService
+  ) {}
 
   signup(movieSignUp: any) {
-    console.log('SERVICE HIT', movieSignUp);
-
     return this.http.post(
       'http://localhost:3000/api/v1/users/create',
       movieSignUp
@@ -22,12 +24,13 @@ export class AuthService {
     return this.http.post('http://localhost:3000/api/v1/users/login', user);
   }
 
-  autoSignIn(){
+  autoSignIn() {
     // get token from browser
     const token = this.getToken();
-    if(!token){
+    if (!token) {
       return;
     }
+
 
     // send request to get user info
     this.http.get("http://localhost:3000/api/v1/users/me",
@@ -48,35 +51,49 @@ export class AuthService {
     })
 
 
+
+    this.http
+      .get('http://localhost:3000/api/v1/users/me', {
+        headers: {
+          Authorization: 'Bearer ' + token.value,
+        },
+      })
+      .subscribe((res: any) => {
+        if (res.success) {
+          this.userService.setCurrentUser(res.payload.user);
+          //this.route.navigate(['/home']);
+        }
+      });
+
   }
 
-  logout(){
+  logout() {
     const token = this.getToken();
 
-    this.http.delete("http://localhost:3000/api/v1/users/logout",
-    {
-      headers: {
-        Authortization: `Bearer ${token.value}`
-      }
-    }).subscribe((res:any)=>{
-      if(res.success){
-        this.removeToken();
-        this.userService.setCurrentUser(null);
-        this.route.navigate(['/login']);
-      }
-    })
+    this.http
+      .delete('http://localhost:3000/api/v1/users/logout', {
+        headers: {
+          Authorization: `Bearer ${token.value}`,
+        },
+      })
+      .subscribe((res: any) => {
+        if (res.success) {
+          this.removeToken();
+          this.userService.setCurrentUser(null);
+          this.route.navigate(['/login']);
+        }
+      });
   }
 
-  getToken(){
-    return JSON.parse(localStorage.getItem('token'))
+  getToken() {
+    return JSON.parse(localStorage.getItem('token'));
   }
 
-  setToken(token){
-    localStorage.setItem('token', JSON.stringify(token))
+  setToken(token) {
+    localStorage.setItem('token', JSON.stringify(token));
   }
 
- removeToken(){
-  localStorage.removeItem('token')
- }
-
+  removeToken() {
+    localStorage.removeItem('token');
+  }
 }
