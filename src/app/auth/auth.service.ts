@@ -37,7 +37,7 @@ export class AuthService {
         Authorization: `Bearer ${token.value}`
       }
     }).subscribe((res:any)=>{
-      if (res.scuess){
+      if (res.success){
         this.userService.setCurrentUser(
           res.payload.user
         )

@@ -1,0 +1,48 @@
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  display: inline-block;
+  position: relative;
+}
+
+.menu a {
+  display: inline-block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  padding: 8px 0;
+  background-color: #8a8a8a;
+  border: 1px solid #000000;
+  border-top: none;
+}
+
+.menu li:hover .dropdown {
+  display: block;
+}
+
+.menu .dropdown li {
+  display: block;
+}
+
+.menu .dropdown li a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #333;
+}
+
+.menu .dropdown li:hover {
+  background-color: #f5f5f5;
+}
