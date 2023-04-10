@@ -23,7 +23,6 @@ export class SignupComponent implements OnInit {
 
   onSubmit() {
     const movieSignUp = this.signupForm.value;
-    console.log(movieSignUp);
 
     this.authService.signup(movieSignUp).subscribe((res: any) => {});
   }

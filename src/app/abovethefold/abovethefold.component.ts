@@ -5,6 +5,7 @@ import { AuthService } from '../auth/auth.service';
 import { UserService } from '../auth/user.service';
 
 import { RapidAPIService } from '../shared/api/rapidAPI.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-abovethefold',
@@ -20,15 +21,26 @@ export class AbovethefoldComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {}
 
   onSubmit() {
-    const loginuser = this.loginForm.value;
+    const user = this.loginForm.value;
 
-    console.log('LOGIN CLICKED', loginuser);
+    this.authService.login(user).subscribe((res: any) => {
+      if (res.success) {
+        this.userService.setCurrentUser(res.payload.user);
+        this.route.navigate(['/home']);
+        this.authService.setToken(res.payload.token);
+      }
+    });
+  }
+
+  onSubmit2() {
+    const loginuser = this.loginForm.value;
 
     this.authService.login(loginuser).subscribe((res: any) => {
       if (res.success) {
