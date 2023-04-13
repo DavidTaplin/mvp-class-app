@@ -16,4 +16,7 @@ export class PlaylistService {
   fetchPlaylist(id:number){
     return this.http.get(`${URL}/playlists/${id}`)
   }
+
+  
+
 }

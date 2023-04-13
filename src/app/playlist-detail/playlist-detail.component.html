@@ -19,10 +19,7 @@
                 <tbody>
                     <tr>
                         <td style="text-align: left;">Movie Title</td>
-                        <td style="text-align: right;">
-                        <app-ratings></app-ratings>
-                        <app-dropdown-ratings></app-dropdown-ratings>
-                      </td>
+                        <td style="text-align: right;" *ngFor="let rating of ratings">{{rating.ratings}}</td><app-rating-edit></app-rating-edit>
                     </tr>
 
                 </tbody>
@@ -30,6 +27,7 @@
 
             <!-- Comments section -->
             <app-comment-form></app-comment-form>
+             <app-ratings></app-ratings>
 
         </div>
     </div>

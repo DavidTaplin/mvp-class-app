@@ -20,6 +20,10 @@ setRatings(ratings){
   this.currentUserRatingsSubject.next(ratings);
 }
 
+onAddRating(rating){
+  this.setRatings([...this.currentUserRatings, rating])
+}
+
 fetchRatings(){
   return this.http.get("http://localhost:3000/api/v1/ratings")
 }
@@ -27,11 +31,11 @@ fetchRatings(){
 onUpdateRatings(updateRatings, id){
    const token = JSON.parse(localStorage.getItem('token'))
 
-   return this.http.put(`http://localhost:3000/api/v1/ratings/${id}`,
+   return this.http.put("http://localhost:3000/api/v1/ratings/1",
    updateRatings, {
     headers: {
       Authorization: `Bearer ${token.value}`
-    }
+    },
    }
    )
 }
@@ -53,6 +57,21 @@ deleteRatings(id){
     }
   })
 }
+
+
+createRating(rating){
+  const token = JSON.parse(localStorage.getItem('token'))
+
+  return this.http.post("http://localhost:3000/api/v1/ratings", rating, {
+    headers: {
+      Authorization: `Bearer ${token.value}`
+    }
+  })
+}
+
+
+
+
 
 
 }

@@ -26,7 +26,7 @@ import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.compo
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
 import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
-import { DropdownRatingsComponent } from './dropdown-ratings/dropdown-ratings.component';
+
 import { RatingEditComponent } from './rating-edit/rating-edit.component';
 
 
@@ -50,7 +50,7 @@ import { RatingEditComponent } from './rating-edit/rating-edit.component';
     PlaylistDetailComponent,
     CommentFormComponent,
     LoginComponent,
-    DropdownRatingsComponent,
+
     RatingEditComponent
 
   ],
