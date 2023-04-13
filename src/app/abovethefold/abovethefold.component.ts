@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { AuthService } from '../auth/auth.service';
-
 import { UserService } from '../auth/user.service';
-
 import { RapidAPIService } from '../shared/api/rapidAPI.service';
 import { Router } from '@angular/router';
 

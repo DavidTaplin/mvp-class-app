@@ -21,7 +21,6 @@ import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-r
 import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +37,13 @@ import { SearchMovieComponent } from './search-movie/search-movie.component';
     UserPlaylistsComponent,
     PlaylistDetailComponent,
     CommentFormComponent,
-     HighestRatedMovieComponent,
-     FeaturedPlaylistComponent,
-     SearchMovieComponent,
+    HighestRatedMovieComponent,
+    FeaturedPlaylistComponent,
+    SearchMovieComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     ReactiveFormsModule,
     HttpClientModule,
   ],

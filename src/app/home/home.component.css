@@ -1,67 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
-/* @import url("https://fonts.googleapis.com/css2?family =Oxanium:wght@200&display=swap"); */
-
 .html,body{
-    margin:0 auto;
-    padding:0;
-    width:100vw;
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-     background: rgb(0,0,0);
-     background: linear-gradient(162deg, rgba(0,0,0,1) 12%, rgba(26,23,57,1) 83%, rgba(44,58,112,1) 95%, rgba(182,229,251,1) 100%);
-}
-h2{
-  color:white;
+  margin:0 auto;
+  padding:0;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+   background: rgb(0,0,0);
+   background: linear-gradient(162deg, rgba(0,0,0,1) 12%, rgba(26,23,57,1) 83%, rgba(44,58,112,1) 95%, rgba(182,229,251,1) 100%);
 }
 input[type=text] {
-    /* position: relative; */
-    bottom: 17em;
-    width: 100%;
-    border-radius: 1em;
-    font-size: larger;
-    color:white;
-    padding: 10px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    background: transparent;
-    transition: box-shadow 0.1s, top 0.1s;
-    transition: box-shadow 0.1s, top 0.1s;
-    box-shadow: 0 3px 0 rgba(0,0,0,0.3);
-    cursor: pointer;
-    background: transparent;
-    border: 1.8px solid rgba(182,229,251,1);
-    outline: none;
+  position: relative;
+  bottom: 30em;
+  right: 24em;
+  width: 100%;
+  border-radius: 1em;
+  font-size: larger;
+  color:white;
+  padding: 10px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background:transparent;
+  transition: box-shadow 0.1s, top 0.1s;
+  transition: box-shadow 0.1s, top 0.1s;
+  box-shadow: 0 3px 0 rgba(0,0,0,0.3);
+  cursor: pointer;
+  border: 1.8px solid rgba(182,229,251,1);
+  outline: none;
+}
+.btn-primary {
+  position: relative;
+  background-color: transparent;
+  bottom: 40em;
+  right: 22em;
+  border-radius: 20px;
 }
 *:before, *:after, *, ::after, ::before {box-sizing: border-box;}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family =Oxanium:wght@200&display=swap");
+
+
 
 .grid-container {
-	--w: 1fr;
-  --n: 3;
-  display: grid;
-  grid-template-columns: repeat(var(--n), minmax(0, var(--w)));
-  grid-template-rows: min-content 1fr min-content;
-  gap: 1rem;
-  padding: 1rem;
-  height: 100vh;
-  color: white;
-  overflow: hidden;
+--w: 1fr;
+--n: 3;
+display: grid;
+grid-template-columns: repeat(var(--n), minmax(0, var(--w)));
+grid-template-rows: min-content 1fr min-content;
+gap: 1rem;
+padding: 1rem;
+height: 100vh; 
+color: white;
+overflow: hidden;
 }
 
 .grid-item {
-  display: grid;
-  overflow: hidden;
-	padding: 1rem;
-  border-radius: .3rem;
-	background-color: rgba(255, 255, 255, 0.03);
+display: grid;
+overflow: hidden;
+padding: 1rem;
+border-radius: .3rem;
+background-color: rgba(255, 255, 255, 0.03);
 }
 
-.grid-item:first-of-type, /* header and footer */
+.grid-item:first-of-type, /* header */
 .grid-item:last-of-type {
-  grid-column: 1 / -1;
+grid-column: 1 / -1;
 }
 
 .grid-item:not(:first-of-type):not(:last-of-type) {
-  grid-template-columns: 1fr;
+grid-template-columns: 1fr;
+}
+.grid-item {
+--s: 0.1em;   /* the thickness of the line */
+--c: #2c4bff; /* the color */
+
+color: #0000;
+padding-bottom: var(--s);
+background: 
+  linear-gradient(90deg,var(--c) 50%,#fff 0) calc(100% - var(--_p,0%))/200% 100%,
+  linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
+-webkit-background-clip: text,padding-box;
+        background-clip: text,padding-box;
+transition: 0.5s;
+}
+.grid-item:hover {--_p: 100%}
+
+
+
+.grid-item {
+font-family: system-ui, sans-serif;
+font-size: 1.25rem;
+cursor: pointer;
 }
