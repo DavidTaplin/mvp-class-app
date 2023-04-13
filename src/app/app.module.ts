@@ -19,6 +19,7 @@ import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.compo
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
 import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-pla
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],
