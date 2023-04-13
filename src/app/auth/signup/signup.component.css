@@ -1,3 +1,8 @@
+h1{
+  padding: 20px;
+  margin-top: 20px;
+}
+
 input[type=text], input[type=password] {width: 100%;
   border-radius: 1.8em;
   color:#fff;
@@ -23,4 +28,8 @@ input[type=email]:focus, input[type=password]:focus {
     border-width:1.75px ;
     background-color: transparent;
 border-radius: 2rem;
+}
+
+p{
+  margin-top: 20px;
 }
