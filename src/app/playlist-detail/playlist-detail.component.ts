@@ -18,6 +18,7 @@ export class PlaylistDetailComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
       const playlistId = params['id'];
+
       this.playlistService.fetchPlaylist(playlistId).subscribe({
         next: (res: any) => {
           this.playlist = res.payload.playlist;

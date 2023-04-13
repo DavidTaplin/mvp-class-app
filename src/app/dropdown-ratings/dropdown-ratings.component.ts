@@ -3,15 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-dropdown-ratings',
   templateUrl: './dropdown-ratings.component.html',
-  styleUrls: ['./dropdown-ratings.component.css']
+  styleUrls: ['./dropdown-ratings.component.css'],
 })
 export class DropdownRatingsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-
-
+  ngOnInit(): void {}
 }
