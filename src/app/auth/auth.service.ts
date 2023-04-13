@@ -46,7 +46,7 @@ export class AuthService {
         )
         console.log(res);
         //navigate to home
-        this.route.navigate(['/home'])
+       // this.route.navigate(['/home'])
       }
     })
 

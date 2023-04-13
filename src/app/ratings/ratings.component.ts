@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { RatingService } from '../services/rating.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-ratings',
@@ -8,6 +9,12 @@ import { RatingService } from '../services/rating.service';
 })
 export class RatingsComponent implements OnInit {
   ratings: any = [];
+  route: any;
+  @ViewChild('closeBtn') closeBtn: ElementRef;
+
+  ratingFormGroup = new FormGroup({
+    rating: new FormControl(''),
+  });
 
   constructor(private ratingService: RatingService) {}
 
@@ -17,6 +24,17 @@ export class RatingsComponent implements OnInit {
       if (res.success) {
         this.ratings = res.payload.rating;
       }
+    });
+  }
+
+  createRating() {
+    const newRating = this.ratingFormGroup.value;
+
+    this.ratingService.createRating(newRating).subscribe({
+      next: (res: any) => {
+        this.closeBtn.nativeElement.click();
+        this.ratingService.onAddRating(res.payload.rating);
+      },
     });
   }
 }
