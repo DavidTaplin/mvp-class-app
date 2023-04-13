@@ -1,18 +1,12 @@
 <div class="flex-container mt-5" *ngIf="userPlaylists">
-  <a
-    routerLink="/playlist-detail/{{ playlist.id }}"
-    class="text-reset"
-    *ngFor="let playlist of userPlaylists"
-  >
-    <div class="card-container">
-      <h5 class="font-weight-bold mb-3">{{ playlist.name }}</h5>
-      <div class="card">
-        <img
-          class="img-fluid"
-          src="https://source.unsplash.com/random/300x300"
-          alt="Card image cap"
-        />
-      </div>
-    </div>
-  </a>
+
+    <a routerLink="/playlist-detail/{{playlist.id}}" class="text-reset" *ngFor="let playlist of userPlaylists">
+        <div class="card-container">
+            <h5 class="font-weight-bold mb-3">{{playlist.name}}</h5>
+            <div class="card">
+                <img class="img-fluid" src="https://source.unsplash.com/random/300x300" alt="Card image cap" />
+            </div>
+        </div>
+    </a>
+    
 </div>
