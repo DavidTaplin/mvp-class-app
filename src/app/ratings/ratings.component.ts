@@ -20,7 +20,6 @@ export class RatingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.ratingService.fetchRatings().subscribe((res: any) => {
-      console.log(res);
       if (res.success) {
         this.ratings = res.payload.rating;
       }
@@ -28,9 +27,9 @@ export class RatingsComponent implements OnInit {
   }
 
   createRating() {
-    const newRating = this.ratingFormGroup.value;
+    const newRating = this.ratingFormGroup.value.rating;
 
-    this.ratingService.createRating(newRating).subscribe({
+    this.ratingService.createRating(Number(newRating)).subscribe({
       next: (res: any) => {
         this.closeBtn.nativeElement.click();
         this.ratingService.onAddRating(res.payload.rating);
