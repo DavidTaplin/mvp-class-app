@@ -28,7 +28,7 @@
   input[type=text], input[type=password] {
   width: 100%;
   border-radius: 1.8em;
-  color:whi;
+  color:#fff;
   padding: 15px;
   margin: 5px 0 22px 0;
   display: inline-block;
@@ -44,7 +44,7 @@
 }
 
 input[type=email]:focus, input[type=password]:focus {
-  background-color: #ddd;
+  background-color:transparent;
   outline: none;
 }
 
