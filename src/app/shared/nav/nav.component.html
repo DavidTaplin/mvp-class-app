@@ -1,25 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/login">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="/signup">Signup</a>
-        </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <section class="buttons">
+      <a class="navBtn" routerLink="/home">Home</a>
+      <a class="navBtn" *ngIf="!currentUser" routerLink="/login">Log In</a>
+      <a class="navBtn" *ngIf="!currentUser" routerLink="/signup">Sign Up</a>
+      <a class="navBtn" routerLink="/about-us">About Us</a>
+      <a class="navBtn" routerLink="/the-team">The Team</a>
+      <a class="navBtn" routerLink="/user" *ngIf="currentUser">My Page</a>
+      <a class="navBtn" (click)="onLogout()" *ngIf="currentUser">Log Out</a>
+    </section>
+    <!-- <nav id="nav">
+        <section class="nav-list">
+            <a href="/">Home</a>
+            <a href="/">About Us</a>
+            <a href="/">The Team</a>
+        </section>
+        <svg id="wave" style="transform:rotate(180deg); transition: 0.3s" viewBox="0 0 1440 490" version="1.1" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0"><stop stop-color="rgba(45, 18, 109, 1)" offset="0%"></stop><stop stop-color="rgba(58.255, 14.72, 157.418, 1)" offset="100%"></stop></linearGradient></defs><path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-0)" d="M0,343L26.7,334.8C53.3,327,107,310,160,285.8C213.3,261,267,229,320,187.8C373.3,147,427,98,480,130.7C533.3,163,587,278,640,326.7C693.3,376,747,359,800,343C853.3,327,907,310,960,261.3C1013.3,212,1067,131,1120,155.2C1173.3,180,1227,310,1280,343C1333.3,376,1387,310,1440,285.8C1493.3,261,1547,278,1600,285.8C1653.3,294,1707,294,1760,269.5C1813.3,245,1867,196,1920,171.5C1973.3,147,2027,147,2080,187.8C2133.3,229,2187,310,2240,359.3C2293.3,408,2347,425,2400,367.5C2453.3,310,2507,180,2560,155.2C2613.3,131,2667,212,2720,245C2773.3,278,2827,261,2880,236.8C2933.3,212,2987,180,3040,171.5C3093.3,163,3147,180,3200,155.2C3253.3,131,3307,65,3360,106.2C3413.3,147,3467,294,3520,359.3C3573.3,425,3627,408,3680,400.2C3733.3,392,3787,392,3813,392L3840,392L3840,490L3813.3,490C3786.7,490,3733,490,3680,490C3626.7,490,3573,490,3520,490C3466.7,490,3413,490,3360,490C3306.7,490,3253,490,3200,490C3146.7,490,3093,490,3040,490C2986.7,490,2933,490,2880,490C2826.7,490,2773,490,2720,490C2666.7,490,2613,490,2560,490C2506.7,490,2453,490,2400,490C2346.7,490,2293,490,2240,490C2186.7,490,2133,490,2080,490C2026.7,490,1973,490,1920,490C1866.7,490,1813,490,1760,490C1706.7,490,1653,490,1600,490C1546.7,490,1493,490,1440,490C1386.7,490,1333,490,1280,490C1226.7,490,1173,490,1120,490C1066.7,490,1013,490,960,490C906.7,490,853,490,800,490C746.7,490,693,490,640,490C586.7,490,533,490,480,490C426.7,490,373,490,320,490C266.7,490,213,490,160,490C106.7,490,53,490,27,490L0,490Z"></path></svg>
+    </nav> -->
+
+

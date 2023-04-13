@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+      <div class="col-md-12">
+
+        <form [formGroup]="commentForm" (ngSubmit)="onSubmit()">
+          <div class="form-group row">
+            <div class="row">
+              <div class="alert alert-danger" role="alert" *ngFor="let error of errors">{{error}}</div>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="content" formControlName="content" placeholder="Add a comment...">
+                <input type="hidden" class="form-control" id="commentableType" formControlName="commentableType" value="playlist">
+                <input type="hidden" class="form-control" id="commentableId" formControlName="commentableId" [value]="playlistId">
+              </div>
+              <div class="col-sm-2">
+                <button type="submit" class="btn btn-primary">Comment</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+    <!-- <div class="row">
+      <div class="col-md-8">
+        <div *ngFor="let comment of comment" class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ comment.name }}</h5>
+            <p class="card-text">{{ comment.content }}</p>
+            <button class="btn btn-danger" (click)="deleteComment(comment)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+</div>
+  
