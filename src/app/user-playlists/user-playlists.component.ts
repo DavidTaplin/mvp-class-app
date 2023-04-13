@@ -12,10 +12,10 @@ export class UserPlaylistsComponent implements OnInit {
   constructor(private playlistService: PlaylistService) {}
 
   ngOnInit(): void {
-    this.playlistService.fetchUsersPlaylist().subscribe((res: any) => {
-      console.log(res);
+    this.playlistService.fetchAllUsersPlaylists().subscribe((res: any) => {
       if (res.success) {
         this.userPlaylists = res.payload.playlists;
+        console.log(this.userPlaylists)
       }
     });
   }
