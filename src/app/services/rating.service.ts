@@ -52,15 +52,6 @@ export class RatingService {
     this.setRatings(this.currentUserRatings);
   }
 
-  deleteRatings(id) {
-    const token = JSON.parse(localStorage.getItem('token'));
-
-    return this.http.delete(`http://localhost:3000/api/v1/ratings/${id}`, {
-      headers: {
-        Authorization: `Bearer ${token.value}`,
-      },
-    });
-  }
 
   createRating(rating: number) {
     const token = JSON.parse(localStorage.getItem('token'));

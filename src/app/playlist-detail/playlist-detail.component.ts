@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PlaylistService } from '../services/playlist.service';
 import { RatingService } from '../services/rating.service';
 
@@ -16,7 +16,8 @@ export class PlaylistDetailComponent implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private playlistService: PlaylistService,
-    private ratingService: RatingService
+    private ratingService: RatingService,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -37,11 +38,7 @@ export class PlaylistDetailComponent implements OnInit {
       }
     });
 
-  }
+  };
 
-  ondeleteRating(){
-    this.ratingService.deleteRatings(this.ratings.id).subscribe((res:any)=>{
-      next: res 
-    })
-  }
+
 }
