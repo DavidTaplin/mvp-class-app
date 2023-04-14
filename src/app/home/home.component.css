@@ -43,13 +43,13 @@ input[type=text] {
 
 .grid-container {
 --w: 1fr;
---n: 3;
+--n: 3; /* number of columns */
 display: grid;
 grid-template-columns: repeat(var(--n), minmax(0, var(--w)));
 grid-template-rows: min-content 1fr min-content;
 gap: 1rem;
 padding: 1rem;
-height: 100vh; 
+height: 100vh;
 color: white;
 overflow: hidden;
 }
@@ -70,13 +70,15 @@ grid-column: 1 / -1;
 .grid-item:not(:first-of-type):not(:last-of-type) {
 grid-template-columns: 1fr;
 }
-.grid-item {
+.grid-item:not(:first-of-type):not(:last-of-type) {
 --s: 0.1em;   /* the thickness of the line */
 --c: #2c4bff; /* the color */
+}
 
+.grid-item {
 color: #0000;
-padding-bottom: var(--s);
-background: 
+padding-bottom: .5em;
+background:
   linear-gradient(90deg,var(--c) 50%,#fff 0) calc(100% - var(--_p,0%))/200% 100%,
   linear-gradient(var(--c) 0 0) 0% 100%/var(--_p,0%) var(--s) no-repeat;
 -webkit-background-clip: text,padding-box;
