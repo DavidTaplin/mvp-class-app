@@ -1,3 +1,5 @@
+<h1> Search for Your Favorite Movie </h1>
+
 <div class="form">
   <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
     <input
@@ -7,9 +9,9 @@
       id="movieTitle"
       value="Test"
       formControlName="movieTitle"
-      placeholder="Search for a movie"
+      placeholder="Search Movie Titles"
     /><br /><br />
-    <button class="btn-primary" type="submit">Search!</button>
+    <button class="btn btn-primary" type="submit">Search</button>
   </form>
 
   <div class="container" *ngFor="let movie of imdbMovie">

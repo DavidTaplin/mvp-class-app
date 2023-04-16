@@ -65,6 +65,7 @@ background-color: rgba(255, 255, 255, 0.03);
 .grid-item:first-of-type, /* header */
 .grid-item:last-of-type {
 grid-column: 1 / -1;
+height: 4vh;
 }
 
 .grid-item:not(:first-of-type):not(:last-of-type) {

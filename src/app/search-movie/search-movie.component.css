@@ -1,3 +1,7 @@
+h1 {
+  font-family: 'Open Sans', sans-serif;
+}
+
 input[type=text] {
   /* position: relative; */
   bottom: 17em;
@@ -16,6 +20,12 @@ input[type=text] {
   background: transparent;
   border: 1.8px solid rgba(182, 229, 251, 1);
   outline: none;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+}
+::-moz-placeholder {
+  text-align: center;
 }
 p{
   font-size: smaller;
@@ -54,4 +64,12 @@ p{
   display: flex;
   justify-content: space-between;
   padding: 0 8px;
+}
+
+.btn-primary {
+  border-width:1.75px ;
+  background-color: transparent;
+  border-radius: 2rem;
+  text-align: center;
+  margin-top: 1px;
 }
