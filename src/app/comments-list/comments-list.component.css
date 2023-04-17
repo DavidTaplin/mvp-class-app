@@ -1,0 +1,10 @@
+.text {
+    color: black;
+    text-align: left;
+    margin-left: 1rem;
+}
+.card {
+    max-width: 70%;
+    margin: 0 auto;
+    float: none;
+}

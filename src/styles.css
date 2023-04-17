@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.body{
+    margin:0 auto;
+    padding:0;
+    width:100vw;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+     background: rgb(0,0,0);
+     background: linear-gradient(162deg, rgba(0,0,0,1) 12%, rgba(26,23,57,1) 83%, rgba(44,58,112,1) 95%, rgba(182,229,251,1) 100%);
+}
+
+.content {
+    margin: 0 auto;
+    text-align:center;
+    color:#fff;
+}

@@ -6,28 +6,24 @@ import { AuthService } from '../auth.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
   signupForm = new FormGroup({
     email: new FormControl(''),
-    userName: new FormControl(''),
+    name: new FormControl(''),
     password: new FormControl(''),
-    password_confirmation: new FormControl('')
-  })
+    username: new FormControl(''),
+    password_confirmation: new FormControl(''),
+  });
 
-  constructor( private authService:AuthService) { }
+  constructor(private authService: AuthService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  onSubmit(){
+  onSubmit() {
     const movieSignUp = this.signupForm.value;
-    console.log(movieSignUp)
 
-    this.authService.signup(movieSignUp).subscribe((res:any) => {})
-
-
+    this.authService.signup(movieSignUp).subscribe((res: any) => {});
   }
-
 }

@@ -1,0 +1,39 @@
+<div class="container" *ngIf="playlist">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- Playlist Title -->
+      <div class="row mb-3">
+        <div class="col-4">
+          <img
+            class="img-fluid"
+            src="https://source.unsplash.com/750x750/?movie,{{ playlist.name }}"
+            alt=""
+          />
+        </div>
+        <div class="col-8">
+          <h2>{{ playlist.name }}</h2>
+          <p>rating *****</p>
+        </div>
+      </div>
+
+      <!-- Movie List -->
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td style="text-align: left">Movie Title</td>
+            <td style="text-align: right" *ngFor="let rating of ratings">
+              {{ rating.ratings }}
+            </td>
+            <app-rating-edit></app-rating-edit>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Comments section -->
+      <app-comment-form></app-comment-form>
+      <app-comments-list></app-comments-list>
+    </div>
+
+    <app-ratings></app-ratings>
+  </div>
+</div>
