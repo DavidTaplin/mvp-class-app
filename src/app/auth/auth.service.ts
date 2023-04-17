@@ -30,6 +30,28 @@ export class AuthService {
     if (!token) {
       return;
     }
+
+
+    // send request to get user info
+    this.http.get("http://localhost:3000/api/v1/users/me",
+
+    {
+      headers: {
+        Authorization: `Bearer ${token.value}`
+      }
+    }).subscribe((res:any)=>{
+      if (res.success){
+        this.userService.setCurrentUser(
+          res.payload.user
+        )
+        console.log(res);
+        //navigate to home
+       // this.route.navigate(['/home'])
+      }
+    })
+
+
+
     this.http
       .get('http://localhost:3000/api/v1/users/me', {
         headers: {
@@ -42,6 +64,7 @@ export class AuthService {
           //this.route.navigate(['/home']);
         }
       });
+
   }
 
   logout() {
