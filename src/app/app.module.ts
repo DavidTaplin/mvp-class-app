@@ -13,13 +13,26 @@ import { TheTeamComponent } from './the-team/the-team.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
 import { MoviesComponent } from './movies/movies.component';
 import { FooterComponent } from './footer/footer.component';
+
+
+import { RatingsComponent } from './ratings/ratings.component';
+import { CommentsComponent } from './comments/comments.component';
+
+
 import { LoginComponent } from './auth/login/login.component';
+
 import { UserPlaylistsComponent } from './user-playlists/user-playlists.component';
 import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.component';
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
 import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
 import { CommentsListComponent } from './comments-list/comments-list.component';
+
+import { SearchMovieComponent } from './search-movie/search-movie.component';
+
+import { RatingEditComponent } from './rating-edit/rating-edit.component';
+
+
 
 
 @NgModule({
@@ -34,18 +47,23 @@ import { CommentsListComponent } from './comments-list/comments-list.component';
     MovieCardComponent,
     MoviesComponent,
     FooterComponent,
-    LoginComponent,
+    TheTeamComponent,
+    RatingsComponent,
+    CommentsComponent,
     UserPlaylistsComponent,
     PlaylistDetailComponent,
     CommentFormComponent,
-     HighestRatedMovieComponent,
-     FeaturedPlaylistComponent,
-     CommentsListComponent,
+    CommentsListComponent,
+    HighestRatedMovieComponent,
+    FeaturedPlaylistComponent,
+    SearchMovieComponent,
+    LoginComponent,
+    RatingEditComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-
     ReactiveFormsModule,
     HttpClientModule,
   ],

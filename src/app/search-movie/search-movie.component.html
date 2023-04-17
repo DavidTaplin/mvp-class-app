@@ -1,0 +1,29 @@
+<h1> Search for Your Favorite Movie </h1>
+
+<div class="form">
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <input
+      class=""
+      type="text"
+      class="form-control"
+      id="movieTitle"
+      value="Test"
+      formControlName="movieTitle"
+      placeholder="Search Movie Titles"
+    /><br /><br />
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+
+  <div class="container" *ngFor="let movie of imdbMovie">
+    <div class="movieCard">
+      <h5>{{ movie.title }}</h5>
+      <p>(IMDB Id: {{ movie.imdb_id }})</p>
+
+      <div class="icons">
+        <span class="material-symbols-rounded justify-left"> post_add </span>
+
+        <span class="material-symbols-rounded"> playlist_add </span>
+      </div>
+    </div>
+  </div>
+</div>

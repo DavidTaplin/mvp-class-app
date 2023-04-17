@@ -1,0 +1,54 @@
+<div>
+  <button
+    type="button"
+    class="btn btn-primary"
+    data-bs-toggle="modal"
+    data-bs-target="#exampleModal2"
+  >
+    Create rating
+  </button>
+</div>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal2"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 style="color: black" class="modal-title" id="exampleModalLabel">
+          Create a Rating
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <form [formGroup]="ratingFormGroup" (ngSubmit)="createRating()">
+        <div class="mb-3">
+          <label style="color: black" class="form-label">Rating</label>
+          <input type="number" class="form-control" formControlName="rating" />
+        </div>
+        <button type="submit" class="btn btn-primary">Create Rating</button>
+
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            #closeBtn
+          >
+            Close
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
