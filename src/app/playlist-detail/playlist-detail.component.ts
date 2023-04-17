@@ -12,13 +12,12 @@ export class PlaylistDetailComponent implements OnInit {
   playlist: any = null;
   ratings: any = [];
 
-
   constructor(
     private route: ActivatedRoute,
-    private playlistService: PlaylistService
+    private playlistService: PlaylistService,
 
     private ratingService: RatingService,
-    private router:Router
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -26,23 +25,17 @@ export class PlaylistDetailComponent implements OnInit {
       const playlistId = params['id'];
 
       this.playlistService.fetchSinglePlaylist(playlistId).subscribe({
-
-     
         next: (res: any) => {
           this.playlist = res.payload.playlist;
-      },
+        },
+      });
 
+      this.ratingService.fetchRatings().subscribe((res: any) => {
+        console.log(res);
+        if (res.success) {
+          this.ratings = res.payload.rating;
+        }
+      });
     });
-
-    this.ratingService.fetchRatings().subscribe((res:any)=>{
-      console.log(res);
-      if(res.success){
-        this.ratings = res.payload.rating;
-      }
-    });
-
-  });
-
-
-}
+  }
 }
