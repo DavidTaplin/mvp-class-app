@@ -11,12 +11,12 @@ export class PlaylistDetailComponent implements OnInit {
   playlist: any = null;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
+    private route: ActivatedRoute,
     private playlistService: PlaylistService
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
+    this.route.params.subscribe((params) => {
       const playlistId = params['id'];
       this.playlistService.fetchSinglePlaylist(playlistId).subscribe({
         next: (res: any) => {

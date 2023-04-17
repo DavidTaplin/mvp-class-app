@@ -1,0 +1,17 @@
+<div class="section" *ngIf="commentsList">
+
+    <div *ngFor="let comment of commentsList">
+        <div class="card mt-3">
+            <header class="card-header border-0 bg-transparent d-flex align-items-center">
+              <div>
+                <img src="https://via.placeholder.com/40x40" class="rounded-circle me-2"/>
+                <a class="fw-semibold text-decoration-none">{{comment.user.username}}</a>
+              </div>
+            </header>
+            <div class="card-body py-2 px-2">
+              <p class="text">{{comment.content}}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
