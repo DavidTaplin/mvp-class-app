@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { CommentService } from '../services/comment.service';
 import { PlaylistService } from '../services/playlist.service';
 import { ActivatedRoute } from '@angular/router';
+import { Comment } from '../shared/models/comment.model';
 
 @Component({
   selector: 'app-comment-form',
@@ -10,14 +11,13 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./comment-form.component.css']
 })
 export class CommentFormComponent implements OnInit {
-  comment: any = null;
   errors = [];
   playlistId: any = null;
 
   commentForm = new FormGroup({
     content: new FormControl(''),
-    commentableType: new FormControl('playlist'),
-    commentableId: new FormControl('null')
+    commentable_type: new FormControl('playlist'),
+    commentable_id: new FormControl(null)
   });
 
   constructor(
@@ -27,29 +27,19 @@ export class CommentFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.playlistService.fetchSinglePlaylist(1).subscribe({
-    //   next: (res:any) => {
-    //     console.log(res);
-    //     this.playlistId = res.payload.playlist
-    //   }
-    // })
     this.route.params.subscribe((params) => {
       const playlistId = params['id'];
       this.playlistId = playlistId;
-      this.commentForm.get('commentableId').setValue(playlistId);
+      this.commentForm.get('commentable_id').setValue(playlistId);
     });
   }
 
   onSubmit(){
-    const newComment = {
-      content: this.commentForm.get('content').value,
-      commentableType: this.commentForm.get('commentableType').value,
-      commentableId: +this.playlistId
-    }
-    // console.log(newComment);
+    const newComment = this.commentForm.value;
+    console.log(newComment);
 
     this.commentService.createComment(newComment).subscribe({
-      next: (res) => {
+      next: (res:any) => {
         console.log(res)
       }, error: (errRes) => {
         console.log(errRes)

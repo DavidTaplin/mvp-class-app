@@ -26,6 +26,7 @@ import { PlaylistDetailComponent } from './playlist-detail/playlist-detail.compo
 import { CommentFormComponent } from './comment-form/comment-form.component';
 import { HighestRatedMovieComponent } from './home/highest-rated-movie/highest-rated-movie.component';
 import { FeaturedPlaylistComponent } from './home/featured-playlist/featured-playlist.component';
+import { CommentsListComponent } from './comments-list/comments-list.component';
 
 import { SearchMovieComponent } from './search-movie/search-movie.component';
 
@@ -52,15 +53,12 @@ import { RatingEditComponent } from './rating-edit/rating-edit.component';
     UserPlaylistsComponent,
     PlaylistDetailComponent,
     CommentFormComponent,
-
+    CommentsListComponent,
     HighestRatedMovieComponent,
     FeaturedPlaylistComponent,
     SearchMovieComponent,
-
     LoginComponent,
-
     RatingEditComponent
-
 
   ],
   imports: [
