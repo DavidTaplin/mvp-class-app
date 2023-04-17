@@ -26,12 +26,11 @@ export class PlaylistDetailComponent implements OnInit {
 
       this.playlistService.fetchSinglePlaylist(playlistId).subscribe({
 
-      this.playlistService.fetchPlaylist(playlistId).subscribe({
-
+     
         next: (res: any) => {
           this.playlist = res.payload.playlist;
       },
-      });
+
     });
 
     this.ratingService.fetchRatings().subscribe((res:any)=>{
@@ -41,7 +40,7 @@ export class PlaylistDetailComponent implements OnInit {
       }
     });
 
-  };
+  });
 
 
 }
