@@ -1,5 +1,5 @@
 p {
-    font-size: 33px;
+    font-size: 40px;
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
@@ -12,7 +12,7 @@ p {
 .hero {
   width: 100%;
   height: 100vh;
-  background: #f1f9ff;
+  background: #FDFEFF;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -37,7 +37,7 @@ h1 {
   height: 80px;
   text-align: center;
   text-decoration: none;
-  color: #fff;
+  color: #FDFEFF;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.05);
   margin: 0 30px;
   border-radius: 50%;
@@ -71,7 +71,7 @@ h1 {
 }
 
 .social-links a:hover .fab {
-  color: #fff;
+  color: #FDFEFF;
 }
 
 .social-links a:hover {
@@ -99,7 +99,7 @@ p#start
 	font-size: 200%;
 	font-weight: 400;
 	margin: 20% auto;
-	color: #4ee;
+	color: #FDFEFF;
 	opacity: 0;
 	z-index: 1;
 	-webkit-animation: intro 2s ease-out;
@@ -141,6 +141,7 @@ p#start
 
 h1
 {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
 	position: absolute;
 	width: 2.6em;
 	left: 50%;
@@ -150,7 +151,7 @@ h1
 	margin-left: -1.3em;
 	line-height: 0.8em;
 	letter-spacing: -0.05em;
-	color: #fff;
+	color: #FDFEFF;
 	text-shadow: -2px -2px 0 #c0c9fa, 2px -2px 0 #c0c9fa, -2px 2px 0 #c0c9fa, 2px 2px 0 #c0c9fa;
 	opacity: 0;
 	z-index: 1;
@@ -163,14 +164,21 @@ h1
 
 h1 sub
 {
+    text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue;
+    color: #FDFEFF;
     margin: 1em;
     letter-spacing: 1.5em;
 	display: block;
-	font-size: 0.3em;
-	letter-spacing: 0;
+	font-size: .3em;
+    font-weight: bold;
+	letter-spacing: 0.03em;
 	line-height: 1.12em;
 }
-
+h2{
+    font-size: 44px;
+    text-shadow: 5px 5px 12px rgb(255, 0, 0), 0 0 5em red, 0 0 0.9em red;
+    color: #FDFEFF;
+}
 @-webkit-keyframes logo {
 	0% { -webkit-transform: scale(1); opacity: 1; }
 	50% { opacity: 1; }
@@ -218,11 +226,11 @@ h1 sub
 	-ms-transform-origin: 50% 100%;
 	-o-transform-origin: 50% 100%;
 	transform-origin: 50% 100%;
-	-webkit-transform: perspective(450px) rotateX(10deg);
-	-moz-transform: perspective(450px) rotateX(10deg);
-	-ms-transform: perspective(450px) rotateX(10deg);
-	-o-transform: perspective(450px) rotateX(10deg);
-	transform: perspective(450px) rotateX(10deg);
+	-webkit-transform: perspective(450px) rotateX(20deg);
+	-moz-transform: perspective(450px) rotateX(20deg);
+	-ms-transform: perspective(450px) rotateX(20deg);
+	-o-transform: perspective(450px) rotateX(20deg);
+	transform: perspective(450px) rotateX(20deg);
 }
 
 #titles:after
@@ -249,7 +257,10 @@ h1 sub
 
 #titles p.center
 {
+    font-family: "Droid Sans", arial, verdana, sans-serif;
+    font-size: 3em;
 	text-align: center;
+    color: #FDFEFF;
 }
 
 #titles a
