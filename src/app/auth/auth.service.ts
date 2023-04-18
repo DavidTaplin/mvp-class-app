@@ -15,13 +15,16 @@ export class AuthService {
 
   signup(movieSignUp: any) {
     return this.http.post(
-      'http://localhost:3000/api/v1/users/create',
+      'https://mvp-app-production-a568.up.railway.app/api/v1/users/create',
       movieSignUp
     );
   }
 
   login(user: any) {
-    return this.http.post('http://localhost:3000/api/v1/users/login', user);
+    return this.http.post(
+      'https://mvp-app-production-a568.up.railway.app/api/v1/users/login',
+      user
+    );
   }
 
   autoSignIn() {
@@ -31,29 +34,28 @@ export class AuthService {
       return;
     }
 
-
     // send request to get user info
-    this.http.get("http://localhost:3000/api/v1/users/me",
+    this.http
+      .get(
+        'https://mvp-app-production-a568.up.railway.app/api/v1/users/me',
 
-    {
-      headers: {
-        Authorization: `Bearer ${token.value}`
-      }
-    }).subscribe((res:any)=>{
-      if (res.success){
-        this.userService.setCurrentUser(
-          res.payload.user
-        )
-        console.log(res);
-        //navigate to home
-       // this.route.navigate(['/home'])
-      }
-    })
-
-
+        {
+          headers: {
+            Authorization: `Bearer ${token.value}`,
+          },
+        }
+      )
+      .subscribe((res: any) => {
+        if (res.success) {
+          this.userService.setCurrentUser(res.payload.user);
+          console.log(res);
+          //navigate to home
+          // this.route.navigate(['/home'])
+        }
+      });
 
     this.http
-      .get('http://localhost:3000/api/v1/users/me', {
+      .get('https://mvp-app-production-a568.up.railway.app/api/v1/users/me', {
         headers: {
           Authorization: 'Bearer ' + token.value,
         },
@@ -64,18 +66,20 @@ export class AuthService {
           //this.route.navigate(['/home']);
         }
       });
-
   }
 
   logout() {
     const token = this.getToken();
 
     this.http
-      .delete('http://localhost:3000/api/v1/users/logout', {
-        headers: {
-          Authorization: `Bearer ${token.value}`,
-        },
-      })
+      .delete(
+        'https://mvp-app-production-a568.up.railway.app/api/v1/users/logout',
+        {
+          headers: {
+            Authorization: `Bearer ${token.value}`,
+          },
+        }
+      )
       .subscribe((res: any) => {
         if (res.success) {
           this.removeToken();
